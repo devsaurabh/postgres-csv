@@ -1,0 +1,6 @@
+[0m[[0m[0minfo[0m] [0m[0m[32mBankRegisterServiceSpec:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mRegisterBanks[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should not process an invalid csv file[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should not process invalid records[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should not insert duplicate record in db[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should insert valid records to db[0m[0m

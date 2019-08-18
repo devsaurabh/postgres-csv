@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:e="http://ant.apache.org/ivy/extra">
+	<info organisation="default"
+		module="banking_2.12"
+		revision="0.1"
+		status="integration"
+		publication="20190818210912"
+	>
+		<description>
+		banking
+		</description>
+	</info>
+	<configurations>
+		<conf name="compile" visibility="public" description=""/>
+		<conf name="runtime" visibility="public" description="" extends="compile"/>
+		<conf name="test" visibility="public" description="" extends="runtime"/>
+		<conf name="provided" visibility="public" description=""/>
+		<conf name="optional" visibility="public" description=""/>
+		<conf name="compile-internal" visibility="private" description="" extends="compile,optional,provided"/>
+		<conf name="runtime-internal" visibility="private" description="" extends="runtime,optional"/>
+		<conf name="test-internal" visibility="private" description="" extends="test,optional,provided"/>
+		<conf name="plugin" visibility="private" description=""/>
+		<conf name="pom" visibility="public" description=""/>
+		<conf name="scala-tool" visibility="private" description=""/>
+	</configurations>
+	<publications>
+		<artifact name="banking_2.12" type="pom" ext="pom" conf="pom"/>
+		<artifact name="banking_2.12" type="jar" ext="jar" conf="compile"/>
+		<artifact name="banking_2.12" type="src" ext="jar" conf="compile" e:classifier="sources"/>
+		<artifact name="banking_2.12" type="doc" ext="jar" conf="compile" e:classifier="javadoc"/>
+	</publications>
+	<dependencies>
+		<dependency org="org.scala-lang" name="scala-compiler" rev="2.12.7" conf="scala-tool->default,optional(default)"/>
+		<dependency org="org.scala-lang" name="scala-library" rev="2.12.7" conf="scala-tool->default,optional(default);compile->default(compile)"/>
+		<dependency org="org.tpolecat" name="doobie-core_2.12" rev="0.7.0" conf="compile->default(compile)"/>
+		<dependency org="org.tpolecat" name="doobie-postgres_2.12" rev="0.7.0" conf="compile->default(compile)"/>
+		<dependency org="org.tpolecat" name="doobie-scalatest_2.12" rev="0.7.0" conf="compile->default(compile)"/>
+		<dependency org="org.tpolecat" name="doobie-hikari_2.12" rev="0.7.0" conf="compile->default(compile)"/>
+		<dependency org="com.lightbend.akka" name="akka-stream-alpakka-csv_2.12" rev="0.18" conf="compile->default(compile)"/>
+		<dependency org="org.scalatest" name="scalatest_2.12" rev="3.0.8" conf="test->default(compile)"/>
+		<dependency org="org.scalamock" name="scalamock_2.12" rev="4.4.0" conf="test->default(compile)"/>
+		<dependency org="com.google.jimfs" name="jimfs" rev="1.1" conf="test->default(compile)"/>
+	</dependencies>
+</ivy-module>
